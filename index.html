@@ -97,7 +97,7 @@
 <body class="deck-container">
         <div class="slide" id="intro">
             <h2>Mobile WebApp Development Frameworks</h2>
-            <h1>From Hype to How-To for Mapping Apps</h1>
+            <h1>Cutting Through The Hype</h1>
             <ul class="authors">
                 <li>Matt Priour <span class="subtle">(OpenGeo)</span></li>
             </ul>
@@ -174,13 +174,14 @@
                     <li>Clean separation of views (declarative HTML) &amp; code</li>
                     <li>Good set of UI widgets &amp; page navigation system</li>
                     <li>Easy to theme via CSS.<br><a href="http://jquerymobile.com/themeroller/">Theme Roller</a> (http://jquerymobile.com/themeroller/) also available</li>
+                    <li>Extremely broad device support (Android 2.1+, 3.x, 4.x; iOS 3+; IE 8+; FF, Chrome, Safari)</li>
                 </ul>
                 <li>Missing</li>
                 <ul>
                     <li>Data driven templating</li>
                     <li>Evented data store</li>
                     <li>Need to include <br>
-                        <a href="http://hay.github.com/stapes/">Stapes</a> (http://hay.github.com/stapes/) &amp; <a href="https://github.com/janl/mustache.js">Mustache.js</a> (https://github.com/janl/mustache.js)<br>
+                        <a href="http://hay.github.com/stapes/">Stapes</a> (http://hay.github.com/stapes/) &amp; <a href="git://github.com/twigkit/tempo.git">Tempo</a> (git://github.com/twigkit/tempo.git)<br>
                         to really have a more full-featured framework
                     </li>
                 </ul>
@@ -213,11 +214,23 @@
             <ul>
                 <li>Features</li>
                 <ul>
-                    <li></li>
+                    <li>MVC Framework. All real logic is defined in controllers</li>
+                    <ul><li>All views defined in JS & event references by string</li></ul>
+                    <li>Wraps Jquery Mobile</li>
+                    <ul><li>Extremely broad device support & good UI widgets</li></ul>
+                    <li>Node.js based build & dev server tools</li>
+                    <ul><li>Uses phoneGap / Cordova for native device building</li>
+                        <li>Very deep set of project setup, build, deploy & native compile commands</li>
+                    </ul>
+                    
                 </ul>
                 <li>Missing</li>
                 <ul>
-                    <li></li>
+                    <li>Documentation - Docs & examples are better than qooxdoo but nothing like jQueryMobile or Sencha Touch</li>
+                    <ul><li>You can probably do a lot with this framework, but the examples & docs are not deep enough to really know</li></ul>
+                    <li>Configuration & Styling flexibility of JQM</li>
+                    <li>Easier inclusion of external libraries. They must be copied into the project</li>
+                    <li>Easier remote data source configuration in models / stores</li>
                 </ul>
             </ul>
         </section>
@@ -227,11 +240,18 @@
             <ul>
                 <li>Features</li>
                 <ul>
-                    <li></li>
+                    <li>MVC Framework. All real logic is defined in controllers</li>
+                    <ul><li>All views defined in JS & event references by string</li></ul>
+                    <li>Good UI Widget Set</li>
+                    <li>Uses similar (but NOT same) syntax to ExtJS4</li>
+                    <li>Evented data stores that easy to configure for remote data sources</li>
                 </ul>
                 <li>Missing</li>
                 <ul>
-                    <li></li>
+                    <li>Broad device support</li>
+                    <ul><li>No offical support for Android 3.x, IE 8 or lower, limited Blackberry support</li></ul>
+                    <li>Better styling documentation.</li>
+                    <ul>Styling is done via LESS but only a video tutorial explains it</ul>
                 </ul>
             </ul>
         </section>
@@ -241,11 +261,11 @@
             <ul>
                 <li>Features</li>
                 <ul>
-                    <li></li>
+                    <li>Unknown</li>
                 </ul>
                 <li>Missing</li>
                 <ul>
-                    <li></li>
+                    <li>Unknown</li>
                 </ul>
             </ul>
         </section>
