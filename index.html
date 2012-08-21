@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mobile WebApp Frameworks</title>
+
+    <link rel="stylesheet" href="externals/deckjs/core/deck.core.css">
+    <link rel="stylesheet" href="externals/deckjs/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" href="externals/deckjs/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="externals/deckjs/extensions/hash/deck.hash.css">
+
+    <link rel="stylesheet" href="externals/deckjs/themes/transition/horizontal-slide.css">
+    <link rel="stylesheet" href="externals/openlayers/theme/default/style.css">
+    <link rel="stylesheet" href="externals/jquery-ui-1.8.18.custom/css/ui-lightness/jquery-ui-1.8.18.custom.css">
+
+    <style>
+    body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    }
+    .deck-container .slide h1 {
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+    .deck-container .slide h2 {
+        color: #2d60b5;
+        border-bottom-color: #e28f3d;
+    }
+    .slide p, .slide li {
+        font-size: 250%;
+    }
+    .subtle {
+        color: #666;
+    }
+    .slide em.subtle {
+        font-size: 50%;
+    }
+    ul.authors {
+        position: absolute;
+        top: 70%;
+    }
+    ul.authors li {
+        list-style: none;
+        font-size: 2.25em;
+        font-weight: bold;
+    }
+    div.caption {
+        font-size: 2.25em;
+        text-align: center;
+    }
+    
+    #contributors-bin {
+        margin: 0 auto;
+        width: 60%;
+        overflow: hidden;
+    }
+    .slide img.gravatar {
+        margin: 1em;
+        width: 100px;
+        display: inline;
+    }
+    .slide img.olTileImage {
+        margin: 0;
+        max-width: inherit;
+    }
+    div.caption {
+        font-size: 2.25em;
+        text-align: center;
+    }
+    #utfgrid-flag {
+        position: relative;
+        z-index: 999;
+        height: 0px;
+        width: 0px;
+        -moz-transition: all 0.1s linear;
+        -webkit-transition: all 0.1s linear;
+    }
+    #utfgrid-flag img {
+        margin: 0;
+        max-width: inherit;
+        position: absolute;
+        width: 80px;
+        -moz-box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.3);
+    }
+    #clientzoom-slider {
+        margin-bottom: 18px;
+        background: rgba(0, 60, 136, 0.5);
+    }
+
+    .olControlAttribution {
+        bottom: 3px;
+    }
+    </style>
+
+    <script src="present-min.js"></script>
+</head>
+
+<body class="deck-container">
+        <div class="slide" id="intro">
+            <h2>Mobile WebApp Development Frameworks</h2>
+            <h1>Cutting Through The Hype</h1>
+            <ul class="authors">
+                <li>Matt Priour <span class="subtle">(OpenGeo)</span></li>
+            </ul>
+        </div>
+
+        <section class="slide" id="1">
+            <h2>Buzzwords</h2>
+            <p>Search for these terms and get all kinds of results</p>
+            <ul>
+                <li>webapp framework</li>
+                <li>html5 webapp development</li>
+                <li>javascript webapp development framework</li>
+                <li>etc...</li>
+            </ul>
+        </section>
+        
+        <section class="slide" id="2">
+            <h1>What do we want</h1>
+            <h2>Required</h2>
+            <ul>
+                <li>Javascript/HTML5/CSS3 Web Apps - Not Native</li>
+                <li>Desktop compatible with <em><u>modern</u></em> browers</li>
+                <li>Single page style sites</li>
+                <li>Useful and Extendable Widgets Library</li>
+                <li>Develop using JS &amp; HTML</li>
+                <li>Free &amp; Open-Source</li>
+            </ul>
+        </section>
+        <section class="slide" id="3">
+            <h1>What do we want</h1>
+            <h2>Preferred</h2>
+            <ul>
+                <li>MVC-ish Structure</li>
+                <li>Evented data stores</li>
+                <li>Data-linked Templates &amp; Widgets</li>
+                <li>Easily themed &amp; customized</li>
+                <li>Project generator &amp; packager</li>
+            </ul>
+        </section>
+        
+        <section class="slide" id="4">
+            <h2>What we <em>don't</em> want</h2>
+            <ul>
+                <li>Mobile Microframeworks</li>
+                <ul><li>Zepto.js, xui - No mobile ui. Simply cross-device DOM &amp; Events</li></ul>
+                <li>Titanium</li>
+                <ul><li><em>Must</em> be compiled to native apps</li></ul>
+                <li>Spine or Backbone alone</li>
+                <ul><li>Just an MVC framework, no mobile ui. Still dependent on HTML id</li></ul>
+                <li>Frameworks that generate JS/HTML from other languages</li>
+                <ul><li>GWT (Java), RhoMobile (Ruby), Coffescript, etc</li></ul>
+                <li>Kendo UI and other such frameworks</li>
+                <ul><li>Not free for open source. Closed to semi-closed source</li></ul>
+            </ul>
+           <h2>No Thanks!</h2>
+        </section>
+        
+        <section class="slide" id="5">
+            <h2>Options</h2>
+            <ul>
+                <li>jQueryMobile (jqm)</li>
+                <li>qooxdoo</li>
+                <li>M-Project (Espresso)</li>
+                <li>Sencha Touch 2</li>
+                <li>Mojito</li>
+            </ul>
+        </section>
+        
+        <section class="slide" id="6">
+            <h2>jQueryMobile<br><a href="http://jquerymobile.com">http://jquerymobile.com</a></h2>
+            <ul>
+                <li>Features</li>
+                <ul>
+                    <li>Clean separation of views (declarative HTML) &amp; code</li>
+                    <li>Good set of UI widgets &amp; page navigation system</li>
+                    <li>Easy to theme via CSS.<br><a href="http://jquerymobile.com/themeroller/">Theme Roller</a> (http://jquerymobile.com/themeroller/) also available</li>
+                    <li>Extremely broad device support (Android 2.1+, 3.x, 4.x; iOS 3+; IE 8+; FF, Chrome, Safari)</li>
+                </ul>
+                <li>Missing</li>
+                <ul>
+                    <li>Data driven templating</li>
+                    <li>Evented data store</li>
+                    <li>Need to include <br>
+                        <a href="http://hay.github.com/stapes/">Stapes</a> (http://hay.github.com/stapes/) &amp; <a href="git://github.com/twigkit/tempo.git">Tempo</a> (git://github.com/twigkit/tempo.git)<br>
+                        to really have a more full-featured framework
+                    </li>
+                </ul>
+            </ul>
+        </section>
+
+        <section class="slide" id="7">
+            <h2>qooxdoo<br><a href="http://qooxdoo.org">http://qooxdoo.org</a></h2>
+            <ul>
+                <li>Features</li>
+                <ul>
+                    <li>All pages defined in JS</li>
+                    <li>Large set of UI widgets</li>
+                    <li>Themed / Customized via LESS</li>
+                    <li>Mostly automatic widget to data model connection &amp; update</li>
+                    <li>Python based SDK for project generation &amp; packaging</li>
+                </ul>
+                <li>Missing</li>
+                <ul>
+                    <li>MVC file structure - each "page" is a class containing:<br>
+                        a view definition, controllers, and a data model instance<br>
+                        <span class="subtle">Similar to defining panels in ExtJs 3</span></li>
+                    <li>Good learning resources - Very limited examples &amp; tutorials</li>
+                </ul>
+            </ul>
+        </section>
+
+        <section class="slide" id="8">
+            <h2>The M-Project<br><a href="http://the-m-project.org">http://the-m-project.org</a></h2>
+            <ul>
+                <li>Features</li>
+                <ul>
+                    <li>MVC Framework. All real logic is defined in controllers</li>
+                    <ul><li>All views defined in JS & event references by string</li></ul>
+                    <li>Wraps Jquery Mobile</li>
+                    <ul><li>Extremely broad device support & good UI widgets</li></ul>
+                    <li>Node.js based build & dev server tools</li>
+                    <ul><li>Uses phoneGap / Cordova for native device building</li>
+                        <li>Very deep set of project setup, build, deploy & native compile commands</li>
+                    </ul>
+                    
+                </ul>
+                <li>Missing</li>
+                <ul>
+                    <li>Documentation - Docs & examples are better than qooxdoo but nothing like jQueryMobile or Sencha Touch</li>
+                    <ul><li>You can probably do a lot with this framework, but the examples & docs are not deep enough to really know</li></ul>
+                    <li>Configuration & Styling flexibility of JQM</li>
+                    <li>Easier inclusion of external libraries. They must be copied into the project</li>
+                    <li>Easier remote data source configuration in models / stores</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section class="slide" id="9">
+            <h2>Sencha Touch 2<br><a href="http://docs.sencha.com/touch/2-0/">http://docs.sencha.com/touch/2-0/</a></h2>
+            <ul>
+                <li>Features</li>
+                <ul>
+                    <li>MVC Framework. All real logic is defined in controllers</li>
+                    <ul><li>All views defined in JS & event references by string</li></ul>
+                    <li>Good UI Widget Set</li>
+                    <li>Uses similar (but NOT same) syntax to ExtJS4</li>
+                    <li>Evented data stores that easy to configure for remote data sources</li>
+                </ul>
+                <li>Missing</li>
+                <ul>
+                    <li>Broad device support</li>
+                    <ul><li>No offical support for Android 3.x, IE 8 or lower, limited Blackberry support</li></ul>
+                    <li>Better styling documentation.</li>
+                    <ul>Styling is done via LESS but only a video tutorial explains it</ul>
+                </ul>
+            </ul>
+        </section>
+        
+        <section class="slide" id="10">
+            <h2>Mojito<br><a href="http://developer.yahoo.com/cocktails/mojito/">http://developer.yahoo.com/cocktails/mojito/</a></h2>
+            <ul>
+                <li>Features</li>
+                <ul>
+                    <li>Unknown</li>
+                </ul>
+                <li>Missing</li>
+                <ul>
+                    <li>Unknown</li>
+                </ul>
+            </ul>
+        </section>
+        
+        <section class="slide" id="11">
+            <h2>Comparison Project</h2>
+            <p>Goal: create a nearly identical mapping project in multiple frameworks for direct comparision</p>
+            <p>Source:</p>
+            <ul><li>
+                GitHub: <a href="https://github.com/mpriour/WebAppMaps"> https://github.com/mpriour/WebAppMaps </a>
+            </li></ul>
+        </section>
+        
+        <section class="slide" id="thanks">
+            <h1>Thanks!</h1>
+        </section>
+
+        <form action="." method="get" class="goto-form">
+            <label for="goto-slide">Go to slide:</label>
+
+            <input type="number" name="slidenum" id="goto-slide">
+            <input type="submit" value="Go">
+        </form>
+</body>
+
+<script>
+    $(function() {
+        // listen for slide changes and run custom to/from listeners
+        $(document).bind("deck.change", function(event, from, to) {
+            var toId = $.deck("getSlide", to).attr("id");
+            if (toId in listeners && listeners[toId].to) {
+                // call in next cycle to let slide rendering finish
+                window.setTimeout(function() {
+                    listeners[toId].to();                    
+                }, 0);
+            }
+            var fromId = $.deck("getSlide", from).attr("id");
+            if (fromId in listeners && listeners[fromId].from) {
+                // call in next cycle to let slide rendering finish
+                window.setTimeout(function() {
+                    listeners[fromId].from();
+                }, 0);
+            }
+            
+        });
+        
+       // custom functions to be run when changing to/from specific slides
+       /* var listeners = { '<id>':{'<event to/from>': <function>} } */
+        var listeners = {};
+        
+        // initialize slides
+        $.deck(".slide");
+    });
+</script>
+
+</html>
